@@ -1,0 +1,101 @@
+﻿@model List<Usuario>
+@section Estilos {
+
+}
+
+<div class="container p-1 text-center">
+    <h4>Lista de Usuarios</h4>
+    
+</div>
+<div class="container mt-3">
+  <div class="row justify-content-center">
+    <div class="col-auto text-center">
+        <a asp-area="" asp-controller="Mantenedor" asp-action="CrearUsuario" class="btn btn-success"> <i class="fa-solid fa-plus"></i> Crear Usuario</a>
+    </div>
+  </div>
+</div>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="">
+            <table id="tablaUsuario" class="table table-striped compact" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>
+                            Nombre
+                        </th>
+                        <th>
+                            Apellido 
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Estado
+                        </th>
+                        <th>
+                            Administrar Usuario
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var usuario in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => usuario.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => usuario.Apellido)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => usuario.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => usuario.Estado)
+                            </td>
+                            <td class="text-center">
+                                <a asp-area="" asp-controller="Mantenedor" asp-action="AdministradorUsuario" class="btn btn-primary"> <i class="fa-solid fa-screwdriver-wrench"></i>Administrar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#tablaUsuario').DataTable({
+                "language": {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla =(",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    },
+                    "buttons": {
+                        "copy": "Copiar",
+                        "colvis": "Visibilidad"
+                    }
+                }
+            });
+        });
+    </script>
+}

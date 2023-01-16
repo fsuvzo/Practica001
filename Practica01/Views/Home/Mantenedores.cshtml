@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-header">Usuarios de Sistemas</h5>
+                <br />
+                <p>(Se puede ver y administrar usuarios ingresados)</p>
+                <a asp-area="" asp-controller="Mantenedor" asp-action="TablaUsuario" class="btn btn-primary">Abrir Tabla de Usuarios</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-header">Permisos de Usuarios</h5>
+                <br />
+                <p>(Se puede ver y administrar permisos por usuario)</p>
+                <a asp-area="" asp-controller="Datos" asp-action="PermisosUsuario" class="btn btn-secondary">Administrar Permisos</a>
+            </div>
+        </div>
+    </div>
+</div>
