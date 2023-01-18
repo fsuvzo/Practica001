@@ -6,66 +6,328 @@
 <div class="container p-2 mt-2 text-center">
     <h3>Administrador de Usuarios</h3>
 </div>
-<div class="container mt-4">
-    <div class="row">
-        <div class="col-sm-4 border rounded ">
-            <div class="row">
-                <div class="col-md-4">
-                    <form asp-action="Edit">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <input type="hidden" asp-for="Id" />
-                        <div class="form-group">
-                            <label asp-for="Nombre" class="control-label"></label>
-                            <input asp-for="Nombre" class="form-control" />
-                            <span asp-validation-for="Nombre" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Apellido" class="control-label"></label>
-                            <input asp-for="Apellido" class="form-control" />
-                            <span asp-validation-for="Apellido" class="text-danger"></span>
-                        </div>
-                        @*<div class="form-group">
-                            <label asp-for="ApellidoMaterno" class="control-label"></label>
-                            <input asp-for="ApellidoMaterno" class="form-control" />
-                            <span asp-validation-for="ApellidoMaterno" class="text-danger"></span>
-                        </div>*@
-                        <div class="form-group">
-                            <label asp-for="Email" class="control-label"></label>
-                            <input asp-for="Email" class="form-control" />
-                            <span asp-validation-for="Email" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Estado" class="control-label"></label>
-                            <input asp-for="Estado" class="form-control" />
-                            <span asp-validation-for="Estado" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Save" class="btn btn-primary" />
-                        </div>
-                    </form>
+
+<div class="row justify-content-start">
+    <div class="col-auto m-1">
+        <a asp-action="" asp-route-id="" class="btn btn-warning">Volver</a>
+    </div>
+</div>
+
+<div class="card col-auto m-1">
+    <div class="card-header">
+        <h6>Editar Usuario</h6>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div class="row g-2 justify-content-center">
+                <div class="col-auto m-2">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+                <div class="col-auto m-2">
+                    <label asp-for="Apellido" class="control-label"></label>
+                    <input asp-for="Apellido" class="form-control" />
+                    <span asp-validation-for="Apellido" class="text-danger"></span>
+                </div>
+                <div class="col-auto m-2">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row g-2 justify-content-center">
+                <div class="col-auto m-2">
+                    <label asp-for="Estado" class="control-label"></label>
+                    <input asp-for="Estado" class="form-control" />
+                    <span asp-validation-for="Estado" class="text-danger"></span>
+                </div>
+                <div class="col-auto m-2">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="col-auto m-2">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="mt-2 text-center">
+                <input type="submit" value="Guardar" class="btn btn-success" />
+                <input type="submit" value="Contraseña" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div class="card col-auto m-1">
+    <div class="card-header">
+        <h6>Asignación de Sistema</h6>
+    </div>
+    <div class="card-body">
+        <table id="tablaUsuario" class="table-hover ">
+            <thead>
+                <tr>
+                    <th>Sistemas Asignados</th>
+                    <th>Asignar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>sistema1</td>
+                    <td><a asp-action="" asp-route-id="" class="btn btn-success">Asignar</a></td>
+                    <td><a asp-action="" asp-route-id="" class="btn btn-danger">Eliminar</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="card col-auto m-1">
+    <div class="card-header">
+        <h6>Asignación de Empresa</h6>
+    </div>
+    <div class="card-body">
+        <table id="tablaUsuario2" class="table-hover">
+            <thead>
+                <tr>
+                    <th>Empresas Asignadas</th>
+                    <th>Asignar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>empresa</td>
+                    <td><a asp-action="" asp-route-id="" class="btn btn-success">Asignar</a></td>
+                    <td><a asp-action="" asp-route-id="" class="btn btn-danger">Eliminar</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="card col-auto m-1">
+    <div class="card-header">
+        <h6>Permisos de Usuario</h6>
+    </div>
+    <div class="card-body">
+        <div class="d-flex align-items-start">
+            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <button class="nav-link active" id="v-pills-perfil-tab" data-bs-toggle="pill" data-bs-target="#v-pills-perfil" type="button" role="tab" aria-controls="v-pills-perfil" aria-selected="true">Perfiles</button>
+                <button class="nav-link" id="v-pills-acceso-tab" data-bs-toggle="pill" data-bs-target="#v-pills-acceso" type="button" role="tab" aria-controls="v-pills-acceso" aria-selected="false">Accesos</button>
+            </div>
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-perfil" role="tabpanel" aria-labelledby="v-pills-perfil-tab" tabindex="0">
+                    <table id="tablaUsuario3" class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>perfil1</td>
+                                <td></td>
+                                <td>X</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>perfil2</td>
+                                <td></td>
+                                <td>X</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>perfil3</td>
+                                <td></td>
+                                <td>X</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="v-pills-acceso" role="tabpanel" aria-labelledby="v-pills-acceso-tab" tabindex="0">
+                    <table id="tablaUsuario4" class="table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Sistema</th>
+                                <th scope="col">Habilitado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>acceso1</td>
+                                <td>s1</td>
+                                <td>X</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>acceso2</td>
+                                <td>s2</td>
+                                <td>X</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>acceso3</td>
+                                <td>s3</td>
+                                <td>X</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-        <div class="col-sm-4 border rounded ">
-            <div class="mb-3 mt-2 ">
-                <h4 class="p-2">Asignación de Sistemas <hr /></h4>
-            </div>
-            <div class="mx-auto border">
-                <h5 class="p-2">Sistemas </h5>
-                <form asp-action="Index">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-group">
-                        <label> Buscar Usuario </label>
-                        <select asp-for="Id" class="form-control" asp-items="@ViewBag.nombres"></select>
-                        <span asp-validation-for="Nombre" class="text-danger"></span>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="col-sm-4 border rounded ">
-            <h3>Column 3</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-        </div>
     </div>
 </div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $(document).ready(function () {
+            $('#tablaUsuario').DataTable({
+                "language": {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla =(",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    },
+                    "buttons": {
+                        "copy": "Copiar",
+                        "colvis": "Visibilidad"
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#tablaUsuario2').DataTable({
+                "language": {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla =(",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    },
+                    "buttons": {
+                        "copy": "Copiar",
+                        "colvis": "Visibilidad"
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#tablaUsuario3').DataTable({
+                "language": {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla =(",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    },
+                    "buttons": {
+                        "copy": "Copiar",
+                        "colvis": "Visibilidad"
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#tablaUsuario4').DataTable({
+                "language": {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla =(",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    },
+                    "buttons": {
+                        "copy": "Copiar",
+                        "colvis": "Visibilidad"
+                    }
+                }
+            });
+        });
+    </script>
+}

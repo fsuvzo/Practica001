@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0HTyaWw7ybDuLWUP4B1To9SVCO8gyOQ53R7tpHp7kWMbWPcfDhZveS8gvRtQUkMzuPoXd0xyDVCaXTRLfmEkAg==",
+  "dgSpecHash": "fyd1/h/2xzFfFMTAXza4zlR5qSnapvhQ+8OU4BxMyeKPtE7PQP0SwD2/EIqSopnsHSoYByDCZPJiIVzY7AzBdQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fs\\Downloads\\Practica01\\Practica01\\Practica01.csproj",
+  "projectFilePath": "C:\\Users\\fs\\OneDrive\\Documentos\\ProyectosGH\\Practica\\Practica01\\Practica01.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fs\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\fs\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
