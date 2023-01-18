@@ -1,4 +1,54 @@
-﻿html {
+﻿body {
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%
+}
+.card {
+    margin-top: 0px;
+    margin-bottom: 15px;
+    border: none !important;
+    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2)
+}
+
+
+.form-control-label {
+    margin-bottom: 0
+}
+
+
+h3 {
+    text-shadow: 1.2px 0.8px #C0C0C0;
+    font-size: 20px;
+}
+
+
+h6 {
+    text-shadow: 1.2px 0.8px #C0C0C0;
+    font-size: 6px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+html {
     font-size: 14px;
 }
 
